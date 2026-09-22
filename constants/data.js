@@ -2,7 +2,7 @@ const userData = {
   githubUsername: "olfiarach",
   name: "Olfia Rachmi",
   designation: "Software Engineer",
-  avatarUrl: "/avatar.jpg",
+  avatarUrl: "/avatar.jpeg",
   address: "Bali, Indonesia",
   projects: [
     {
