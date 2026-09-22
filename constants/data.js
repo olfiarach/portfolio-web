@@ -1,10 +1,15 @@
 const userData = {
-  githubUsername: "floferno",
+  githubUsername: "olfiarach",
   name: "Olfia Rachmi",
   designation: "Software Engineer",
   avatarUrl: "/avatar.jpg",
   address: "Bali, Indonesia",
   projects: [
+    {
+      title: "WTM",
+      link: "https://wtmintl.com",
+      imgUrl: "/wtm-intl.png",
+    },
     {
       title: "Art Gallery",
       link: "https://art-gallery-floferno.vercel.app/",
@@ -39,12 +44,12 @@ const userData = {
   ],
   about: {
     title:
-      "I am a web (*cough* a little bit of a weeb too *cough*) developer, coding teacher, and digital illustrator.",
+      "",
     description: [
-      `I love to create things that *hopefully* please the eye. My goals are to always build products that provide pixel-perfect, excellent performance experiences, and share with others`
+      ``
     ],
-    currentProject: "Art Magazine",
-    currentProjectUrl: "https://art-gallery-floferno.vercel.app/",
+    // currentProject: "Art Magazine",
+    // currentProjectUrl: "https://art-gallery-floferno.vercel.app/",
   },
   experience: [
       {
