@@ -1,58 +1,50 @@
-import React from "react";
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
-import { RainbowHighlight } from "./RainbowHighlight";
-import userData from "@constants/data";
+import content from "../constants/content";
+import Need from "./Need";
+
+const { hero: h, links, ui } = content;
 
 export default function Hero() {
-  const colors = ["#ffbe0b", "#fb5607", "#ff006e", "#8338ec"];
   return (
-    <div className="flex flex-row justify-center items-start overflow-hidden">
-      {/* Text container */}
-
-      <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20">
-        <RoughNotationGroup show={true}>
-          <RainbowHighlight color={colors[0]}>
-            <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-              Developer.
-            </h1>
-          </RainbowHighlight>
-          <RainbowHighlight color={colors[1]}>
-            <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-              Teacher.
-            </h1>
-          </RainbowHighlight>
-          <RainbowHighlight color={colors[2]}>
-            <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-              Illustrator.
-            </h1>
-          </RainbowHighlight>
-
-        </RoughNotationGroup>
-      </div>
-      {/* Image container */}
-      <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
-        <div className="w-3/4 ">
-          <img src={userData.avatarUrl} alt="avatar" className=" shadow" />
-          <div className="flex flex-row justify-between mt-4">
-            <div className="flex flex-row space-x-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-90deg-up"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"
-                />
-              </svg>
-              <p className="font-mono">Voilà! C'est moi~</p>
-            </div>
-          </div>
+    <section aria-label="Introduction" className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:py-24">
+      <div className="lg:col-span-7">
+        <p data-hero="kicker" className="mono text-ink-2">{h.kicker}</p>
+        <h1 data-hero="h1" data-split className="display mt-6 text-step-4">{h.h1}</h1>
+        <p className="mt-6 max-w-xl text-ink-2">{h.sub}</p>
+        <div data-hero="cta" className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <a href={links.email} aria-label={ui.emailLabel} className="btn btn-primary">{h.cta}</a>
+          {links.cv ? (
+            <a href={links.cv} aria-label={ui.cvLabel} className="link">{h.cv}</a>
+          ) : (
+            <Need>[NEED: CV PDF]</Need>
+          )}
+          <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="link">
+            {h.linkedin}<span className="sr-only"> ({ui.newTab})</span>
+          </a>
         </div>
+        <p className="mono mt-6 text-ink-2">{h.chip}</p>
       </div>
-    </div>
+      <div className="lg:col-span-5">
+        <figure
+          data-hero="media"
+          role="img"
+          aria-label={h.alt}
+          className="relative aspect-[4/5] w-full overflow-hidden bg-line sm:aspect-[3/2] lg:aspect-[4/5]"
+        >
+          {h.photo && <img src={h.photo} alt="" className="h-full w-full object-cover" />}
+          <canvas data-hero="canvas" aria-hidden="true" className="absolute inset-0 h-full w-full" />
+          {h.label && (
+            <div aria-hidden="true" data-hero="box" className="hero-box">
+              <span data-hero="label" className="hero-label mono">{h.label}</span>
+            </div>
+          )}
+          <span className="sr-only">{ui.fallbackNote}</span>
+          {!h.photo && <span className="mono absolute bottom-2 left-2 text-ink-2">{ui.heroFallback}</span>}
+        </figure>
+        <a href={links.demo} target="_blank" rel="noopener noreferrer" className="link mono mt-3 inline-block">
+          {content.project.demoCta}<span className="sr-only"> ({ui.newTab})</span>
+        </a>
+        {h.need.map((n) => <Need key={n}>{n}</Need>)}
+      </div>
+    </section>
   );
 }
