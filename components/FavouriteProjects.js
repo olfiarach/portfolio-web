@@ -5,7 +5,7 @@ const { project: p, links, ui } = content;
 
 export default function FavouriteProjects() {
   return (
-    <section id="work" aria-labelledby="work-h" data-section className="mx-auto max-w-6xl scroll-mt-12 px-4 py-24 sm:px-6">
+    <section id="work" aria-labelledby="work-h" data-section className="mx-auto max-w-6xl scroll-mt-24 px-4 sm:scroll-mt-12 py-16 sm:px-6 sm:py-24">
       <div data-pin>
         <p data-box className="mono det text-ink-2">{p.kicker}</p>
         <h2 id="work-h" data-split className="display mt-6 text-step-4">

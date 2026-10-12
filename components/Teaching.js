@@ -4,7 +4,7 @@ const { teaching: t } = content;
 
 export default function Teaching() {
   return (
-    <section id="teaching" aria-labelledby="teach-k" className="mx-auto max-w-6xl scroll-mt-12 px-4 py-24 sm:px-6">
+    <section id="teaching" aria-labelledby="teach-k" className="mx-auto max-w-6xl scroll-mt-24 px-4 sm:scroll-mt-12 py-16 sm:px-6 sm:py-24">
       <p id="teach-k" data-box className="mono det text-ink-2">{t.kicker}</p>
       <p className="display mt-6 text-step-4">{t.big}</p>
       <p className="display text-step-2">{t.under}</p>

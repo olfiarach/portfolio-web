@@ -137,10 +137,10 @@ const content = {
     h2: "What I build with",
     // logo = Iconify SVG Logos id (real tech marks only)
     groups: [
-      ["AI & Vision", [["Python", "python"], ["PyTorch", "pytorch"], ["YOLOv8"], ["OpenCV"], ["Roboflow"]]],
-      ["Frontend", [["React", "react"], ["Next.js", "nextjs-icon"], ["TypeScript"], ["Tailwind CSS"], ["Webflow"]]],
-      ["Backend & Data", [["FastAPI", "fastapi"], ["Node.js"], ["Firebase"], ["Realm"], ["Google Maps API"]]],
-      ["I also teach", [["JavaScript"], ["React Native"], ["Vue.js"], ["HTML & CSS"], ["Python"]]],
+      ["AI & Vision", [["Python", "python"], ["PyTorch", "pytorch-icon"], ["YOLOv8"], ["OpenCV", "opencv"], ["Roboflow"]]],
+      ["Frontend", [["React", "react"], ["Next.js", "nextjs-icon"], ["TypeScript", "typescript-icon"], ["Tailwind CSS", "tailwindcss-icon"], ["Webflow", "webflow"]]],
+      ["Backend & Data", [["FastAPI", "fastapi-icon"], ["Node.js", "nodejs-icon"], ["Firebase", "firebase"], ["Realm", "realm"], ["Google Maps API", "google-maps"]]],
+      ["I also teach", [["JavaScript", "javascript"], ["React Native", "react"], ["Vue.js", "vue"], ["HTML & CSS", "html-5"], ["Python", "python"]]],
     ],
   },
   contact: {

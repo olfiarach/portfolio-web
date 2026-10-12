@@ -63,3 +63,6 @@ li:hover > .logo { filter: none; }
 /* featured project: pinned layout is applied by JS (desktop, motion allowed) */
 .pinned .steps { display: grid; }
 .pinned .step { grid-area: 1 / 1; }
+
+/* SplitText word masks clip descenders at line-height 1; extend the mask without shifting layout */
+[data-split] > * { padding-bottom: 0.15em; margin-bottom: -0.15em; }

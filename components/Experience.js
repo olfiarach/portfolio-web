@@ -4,7 +4,7 @@ const { experience: e } = content;
 
 export default function Experience() {
   return (
-    <section id="experience" aria-labelledby="exp-h" className="mx-auto max-w-6xl scroll-mt-12 px-4 py-24 sm:px-6">
+    <section id="experience" aria-labelledby="exp-h" className="mx-auto max-w-6xl scroll-mt-24 px-4 sm:scroll-mt-12 py-16 sm:px-6 sm:py-24">
       <p data-box className="mono det text-ink-2">{e.kicker}</p>
       <h2 id="exp-h" data-split className="display mt-6 text-step-4">{e.h2}</h2>
       <ul className="mt-12 divide-y divide-line border-y border-line">

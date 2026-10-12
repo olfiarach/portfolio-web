@@ -24,7 +24,8 @@ export default function Motion() {
         const el = a && document.querySelector(a.getAttribute("href"));
         if (!el) return;
         e.preventDefault();
-        lenis.scrollTo(el, { duration: 0.7 });
+        // Lenis ignores CSS scroll-margin; pass it as offset
+        lenis.scrollTo(el, { duration: 0.7, offset: -parseFloat(getComputedStyle(el).scrollMarginTop) || 0 });
         el.focus?.({ preventScroll: true });
         history.pushState(null, "", a.getAttribute("href"));
       };
@@ -39,9 +40,9 @@ export default function Motion() {
           .timeline({ defaults: { ease: "expo.out" } })
           .from(hero("kicker"), { opacity: 0, duration: 0.3 })
           .from(h1.words, { yPercent: 100, stagger: 0.04, duration: 0.8 }, ">-0.1")
+          .from(hero("cta"), { opacity: 0, duration: 0.3 }, "-=0.4") // don't hold CTAs behind the shader wait
           .from(hero("box"), { clipPath: "inset(0 100% 100% 0)", duration: 0.6, ease: "power2.out" }, "+=1.2") // after the 1.2s shader sweep
-          .from(hero("label"), { clipPath: "inset(0 100% 0 0)", duration: 0.5, ease: "steps(14)" })
-          .from(hero("cta"), { opacity: 0, duration: 0.3 }, "<");
+          .from(hero("label"), { clipPath: "inset(0 100% 0 0)", duration: 0.5, ease: "steps(14)" });
 
         // section headings
         gsap.utils.toArray("[data-split]:not([data-hero])").forEach((el) => {

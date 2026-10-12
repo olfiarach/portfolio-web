@@ -6,7 +6,7 @@ const { contact: c, links, ui, footer } = content;
 export default function Contact() {
   return (
     <>
-      <section id="contact" aria-labelledby="contact-h" className="mx-auto max-w-6xl scroll-mt-12 px-4 py-24 sm:px-6">
+      <section id="contact" aria-labelledby="contact-h" className="mx-auto max-w-6xl scroll-mt-24 px-4 sm:scroll-mt-12 py-16 sm:px-6 sm:py-24">
         <h2 id="contact-h" data-split className="display text-step-4">{c.h2}</h2>
         <p className="mt-6 max-w-xl">{c.body}<Need>{c.need}</Need></p>
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
