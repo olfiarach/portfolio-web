@@ -2,32 +2,24 @@
 
 > AI & Computer Vision Engineer based in Bali, open to remote or hybrid roles. Builds computer vision models and the web apps that put them to work.
 
-Site: https://olfiarach.vercel.app
+3+ years shipping React and Next.js apps, now working in machine learning: curates data, trains and tunes models, wraps them in apps people can use. Coding instructor since 2022 (Timedoor Academy); 98% of students finish their final project.
 
-## About
-- 3+ years shipping React and Next.js apps, now working in machine learning: curates data, trains and tunes models, wraps them in apps people can use.
-- Coding instructor since 2022 (Timedoor Academy); 98% of students finish their final project.
+Skills: Python, PyTorch, YOLOv8, OpenCV, Roboflow, React, Next.js, TypeScript, Tailwind CSS, Webflow, FastAPI, Node.js, Firebase, Realm, Google Maps API.
 
-## Skills
-- AI & Vision: Python, PyTorch, YOLOv8, OpenCV, Roboflow
-- Frontend: React, Next.js, TypeScript, Tailwind CSS, Webflow
-- Backend & Data: FastAPI, Node.js, Firebase, Realm, Google Maps API
+Experience: Coding Instructor, Timedoor (2022 - now, part-time); Web Specialist, Freelance (2026); Full-stack Developer, Semantu (2023 - 2025); Frontend Developer, Venatronics LLC (2022 - 2023); Coding Teacher, Kodland (2022 - 2023, part-time).
 
-## Featured project: TemanNetra
-- Real-time Indonesian Rupiah banknote detector for visually impaired micro-merchants.
-- YOLOv8 model with mAP@50 above 90%, served via FastAPI in under 150 ms.
-- Code: https://github.com/olfiarach/TemanNetra
-- Live app: https://olfiarach.github.io/TemanNetra/
+## Docs
 
-## Experience
-- Coding Instructor, Timedoor (2022 - now, part-time)
-- Web Specialist, Freelance (2026)
-- Full-stack Developer, Semantu (2023 - 2025)
-- Frontend Developer, Venatronics LLC (2022 - 2023)
-- Coding Teacher, Kodland (2022 - 2023, part-time)
+- [Portfolio](https://olfiarach.vercel.app/): Home page with projects, experience and contact
+- [CV (PDF)](https://olfiarach.vercel.app/Olfia_Rachmi_W_CV.pdf): Full résumé
 
-## Links
-- LinkedIn: https://www.linkedin.com/in/olfia-rachmi
-- GitHub: https://github.com/olfiarach
-- Email: olfiarachmi@gmail.com
-- CV (PDF): /Olfia_Rachmi_W_CV.pdf
+## Projects
+
+- [TemanNetra source](https://github.com/olfiarach/TemanNetra): Real-time Indonesian Rupiah banknote detector for visually impaired micro-merchants; YOLOv8, mAP@50 above 90%, served via FastAPI in under 150 ms
+- [TemanNetra live app](https://olfiarach.github.io/TemanNetra/): Browser demo
+
+## Optional
+
+- [LinkedIn](https://www.linkedin.com/in/olfia-rachmi): Professional profile
+- [GitHub](https://github.com/olfiarach): Code
+- [Email](mailto:olfiarachmi@gmail.com): olfiarachmi@gmail.com

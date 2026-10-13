@@ -47,7 +47,7 @@ export default function Motion() {
 
         // section headings
         gsap.utils.toArray("[data-split]:not([data-hero])").forEach((el) => {
-          const s = SplitText.create(el, { type: "words", mask: "words" });
+          const s = SplitText.create(el, { type: "words", mask: "words", aria: "none" }); // word spans keep text readable; "auto" puts a prohibited aria-label on <p>
           gsap.from(s.words, {
             yPercent: 110, opacity: 0, stagger: 0.03, duration: 0.7, ease: "expo.out",
             scrollTrigger: { trigger: el, start: "top 80%", once: true },
