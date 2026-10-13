@@ -1,119 +1,50 @@
-import React from "react";
-import Link from "next/link";
+import content from "../constants/content";
+import Need from "./Need";
+
+const { project: p, links, ui } = content;
 
 export default function FavouriteProjects() {
   return (
-    <div className="bg-[#e6e6e6] -mt-40 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto">
-        <header className="flex flex-col md:flex-row justify-between items-center pt-40 mx-10 md:my-20 lg:my-0">
-          <h1 className="text-6xl lg:text-9xl max-w-lg font-bold text-gray-500 my-20 md:my-0 md:text-white dark:text-gray-600 text-center">
-            Favourite Projects
-          </h1>
-          <Link href="/projects">
-            <a className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-up-right-square"
-                stroke="4"
-                strokeWidth="4"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"
-                />
-              </svg>
-              <p>View all</p>
-            </a>
-          </Link>
-        </header>
-
-        {/* Grid starts here */}
-        <div className="grid md:grid-cols-3 gap-8 lg:-mt-8 pb-40">
-          {/* Single card */}
-          <a
-            href="https://art-gallery-floferno.vercel.app/"
-            className="w-full block col-span-3 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              <img
-                src="/art-gallery-cut.png"
-                alt="Art Gallery"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-400 rounded-md px-2">
-                Art Gallery
-              </h1>
-              <h1 className="absolute bottom-10 left-10 text-gray-50 font-bold text-xl">
-                01
-              </h1>
-            </div>
-          </a>
-          {/* Single card */}
-          <a
-            href="https://fancy-todo.vercel.app"
-            className="w-full block col-span-3 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
-                src="/fancy-todo.png"
-                alt="Fancy Todo"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-purple-400 rounded-md px-2">
-                Fancy To-do
-              </h1>
-              <h1 className="absolute bottom-10 left-10 text-gray-50 font-bold text-xl">
-                02
-              </h1>
-            </div>
-          </a>
-          {/* Single card */}
-          <a
-            href="https://tenzies-floferno.vercel.app/"
-            className="w-full block col-span-3 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              <img
-                src="/tenzies.gif"
-                alt="Tenzies"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-400 rounded-md px-2">
-                Tenzies
-              </h1>
-              <h1 className="absolute bottom-10 left-10 text-gray-50 font-bold text-xl">
-                03
-              </h1>
-            </div>
-          </a>
-          {/* Single card */}
-          <a
-            href="https://floferno.github.io"
-            className="w-full block col-span-3 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
-                src="/music-app.png"
-                alt="Music Player App"
-                className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
-              />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-pink-400 rounded-md px-2">
-                Music Player
-              </h1>
-              <h1 className="absolute bottom-10 left-10 text-gray-50 font-bold text-xl">
-                04
-              </h1>
-            </div>
-          </a>
-          {/* Single card */}
+    <section id="work" aria-labelledby="work-h" data-section className="mx-auto max-w-6xl scroll-mt-24 px-4 sm:scroll-mt-12 py-16 sm:px-6 sm:py-24">
+      <div data-pin>
+        <p data-box className="mono det text-ink-2">{p.kicker}</p>
+        <h2 id="work-h" data-split className="display mt-6 text-step-4">
+          {p.title}{p.need && <Need>{p.need}</Need>}
+        </h2>
+        <p className="mt-4 max-w-2xl text-step-2 display" style={{ letterSpacing: "-0.01em" }}>{p.oneLiner}</p>
+        <p className="mt-4 max-w-2xl text-ink-2">{p.why}</p>
+        <div className="mt-12 grid gap-8 lg:grid-cols-12">
+          <ol aria-hidden="true" className="mono relative hidden text-ink-2 lg:col-span-3 lg:block">
+            <span data-stepbox className="absolute left-0 top-0 h-10 w-full border-2 border-signal" />
+            {p.steps.map((s) => <li key={s.label} className="flex h-10 items-center px-3">{s.label}</li>)}
+          </ol>
+          <ol className="steps space-y-10 lg:col-span-9">
+            {p.steps.map((s) => (
+              <li key={s.label} data-step className="step">
+                <p className="mono text-ink-2">{s.label}</p>
+                {s.stat && <p className="display mt-2 text-step-2">{s.stat}</p>}
+                <h3 className="display mt-2 text-step-2">{s.heading}</h3>
+                <p className="mt-2 max-w-xl text-ink-2">{s.body}{s.need && <Need>{s.need}</Need>}</p>
+              </li>
+            ))}
+          </ol>
         </div>
+        <div className="mt-10 flex flex-wrap items-center gap-x-6">
+          {links.repo ? (
+            <a href={links.repo} target="_blank" rel="noopener noreferrer" className="link">{p.repoCta}<span className="sr-only"> ({ui.newTab})</span></a>
+          ) : <Need>[NEED: repo URL]</Need>}
+          {links.demo ? (
+            <a href={links.demo} target="_blank" rel="noopener noreferrer" className="link">{p.demoCta}<span className="sr-only"> ({ui.newTab})</span></a>
+          ) : <Need>[NEED: video]</Need>}
+        </div>
+        <p className="mono mt-6 text-ink-2">{p.tags.join(" · ")}</p>
+        <p className="mono mt-10 text-ink-2">{p.moreTitle}</p>
+        <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          {p.more.map(([n, u]) => (
+            <li key={n}><a href={u} target="_blank" rel="noopener noreferrer" className="link">{n} ↗<span className="sr-only"> ({ui.newTab})</span></a></li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </section>
   );
 }

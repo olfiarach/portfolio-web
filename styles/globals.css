@@ -1,21 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../pages";
+@source "../components";
 
-@import 'fonts.css';
+:root {
+  --paper: #f6f3ec; --ink: #16181d; --ink-2: #5b5f68; --line: #ddd7ca;
+  --signal: #e4572e; --ok: #2f7d5b; --on-signal: #16181d;
+  --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --step-2: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);
+  --step-4: clamp(3rem, 1.8rem + 6vw, 8rem);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+:root:not([data-theme="light"]) { color-scheme: light dark; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #121317; --ink: #ede9e3; --ink-2: #a3a7b0; --line: #2a2c33; }
+}
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Inter var', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-a {
-  color: inherit;
-  text-decoration: none;
+@theme inline {
+  --color-paper: var(--paper); --color-ink: var(--ink); --color-ink-2: var(--ink-2);
+  --color-line: var(--line); --color-signal: var(--signal); --color-ok: var(--ok);
+  --font-display: var(--font-fraunces), serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+  --text-step-0: var(--step-0); --text-step-2: var(--step-2); --text-step-4: var(--step-4);
 }
 
-* {
-  box-sizing: border-box;
+html { background: var(--paper); color: var(--ink); scroll-behavior: auto; }
+body { font-family: var(--font-inter), sans-serif; font-size: var(--step-0); line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+
+.display { font-family: var(--font-fraunces), serif; font-variation-settings: "opsz" 144, "SOFT" 100; letter-spacing: -0.03em; line-height: 1; }
+.mono { font-family: var(--font-jetbrains), monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.skip { position: absolute; left: 1rem; top: -4rem; z-index: 60; background: var(--signal); color: var(--on-signal); padding: 0.75rem 1rem; min-height: 44px; }
+.skip:focus { top: 1rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* detection box motif */
+.det { display: inline-block; border: 2px solid var(--signal); padding: 0.25rem 0.5rem; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1.25rem; font-weight: 500; transition: background-color 150ms var(--ease-out), transform 100ms var(--ease-out); }
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--signal); color: var(--on-signal); }
+.btn-primary:hover { background: color-mix(in srgb, var(--signal) 85%, white); }
+.link { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+
+/* hero box (static HTML/CSS overlay, readable without JS) */
+.hero-box { position: absolute; inset: 22% 14% 30% 14%; border: 2px solid var(--signal); }
+.hero-label { position: absolute; left: -2px; top: -1.7rem; background: var(--signal); color: var(--on-signal); padding: 0.1rem 0.5rem; white-space: nowrap; }
+
+/* experience row hover box */
+.row { position: relative; }
+.row::after { content: ""; position: absolute; inset: 0; border: 2px solid var(--signal); pointer-events: none; clip-path: inset(0 100% 100% 0); transition: clip-path 180ms var(--ease-out); }
+.row-label { position: absolute; right: 0; top: 0; background: var(--signal); color: var(--on-signal); padding: 0 0.5rem; opacity: 0; transition: opacity 180ms var(--ease-out); }
+@media (hover: hover) {
+  .row:hover::after { clip-path: inset(0); }
+  .row:hover .row-label { opacity: 1; }
 }
+
+/* stack logos */
+.logo { width: 1.25rem; height: 1.25rem; }
+
+/* featured project: pinned layout is applied by JS (desktop, motion allowed) */
+.pinned .steps { display: grid; }
+.pinned .step { grid-area: 1 / 1; }
+
+/* SplitText word masks clip descenders at line-height 1; extend the mask without shifting layout */
+[data-split] > * { padding-bottom: 0.15em; margin-bottom: -0.15em; }
