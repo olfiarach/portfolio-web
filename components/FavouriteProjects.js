@@ -38,6 +38,12 @@ export default function FavouriteProjects() {
           ) : <Need>[NEED: video]</Need>}
         </div>
         <p className="mono mt-6 text-ink-2">{p.tags.join(" · ")}</p>
+        <p className="mono mt-10 text-ink-2">{p.moreTitle}</p>
+        <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          {p.more.map(([n, u]) => (
+            <li key={n}><a href={u} target="_blank" rel="noopener noreferrer" className="link">{n} ↗<span className="sr-only"> ({ui.newTab})</span></a></li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -18,7 +18,6 @@ export default function Contact() {
       </section>
       <footer className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 border-t border-line px-4 py-6 text-sm text-ink-2 sm:px-6">
         <p>{footer.text}</p>
-        <a href="/CREDITS.md" className="link">{footer.credits}</a>
       </footer>
     </>
   );

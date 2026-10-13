@@ -77,6 +77,16 @@ const content = {
     repoCta: "View the code ↗",
     demoCta: "Try the live app ↗",
     tags: ["YOLOv8", "PyTorch", "OpenCV", "Roboflow", "FastAPI"],
+    moreTitle: "MORE PROJECTS",
+    more: [
+      ["WTM", "https://wtmintl.com"],
+      ["Art Gallery", "https://art-gallery-floferno.vercel.app"],
+      ["Fancy Todo", "https://fancy-todo.vercel.app"],
+      ["Music App", "https://floferno.github.io"],
+      ["Tenzies", "https://tenzies-floferno.vercel.app"],
+      ["Travel Journal", "https://travel-journal-floferno.vercel.app"],
+      ["Meme Generator", "https://meme-generator-floferno.vercel.app"],
+    ],
   },
   experience: {
     kicker: "EXPERIENCE",
@@ -89,6 +99,7 @@ const content = {
         lines: [
           "I teach Python, JavaScript, React Native and Vue.js to students in Indonesia, MENA and Australia, in class and online.",
           "98% of my students finish their final project.",
+          "I teach kids and teenagers with Scratch, JavaScript, Phaser and React Native, building games, websites and mobile apps, and I write progress reports to parents.",
         ],
         label: "teaching 0.98",
       },
@@ -107,6 +118,7 @@ const content = {
         role: "Full-stack Developer",
         org: "Semantu",
         lines: [
+          "I build product-based web apps at semantu.com.",
           "I built React and Tailwind web apps with Google Maps geolocation and Zoom video built in.",
           "I turned legacy code into a shared component library, which cut new-feature build time by 20%.",
         ],
@@ -119,8 +131,27 @@ const content = {
         lines: [
           "I took the company's flagship site from Figma to production in React.",
           "Mobile-first, with first load under 2 seconds.",
+          "I built responsive company websites in React (venatronics.com).",
         ],
         label: "frontend 0.94",
+      },
+      {
+        dates: "2022 – 2023",
+        role: "Coding Teacher",
+        org: "Kodland (part-time)",
+        lines: [
+          "I taught kids to code with Scratch by building games, and wrote progress reports to parents.",
+        ],
+        label: "teaching",
+      },
+      {
+        dates: "2022",
+        role: "Front-End Developer",
+        org: "Freelance",
+        lines: [
+          "I developed projects and websites from design to code, aiming for pixel-perfect, performance-focused results (faldi.xyz).",
+        ],
+        label: "frontend",
       },
     ],
   },
@@ -152,7 +183,7 @@ const content = {
     linkedin: "LinkedIn ↗",
     github: "GitHub ↗",
   },
-  footer: { text: "© 2026 Olfia Rachmi W · Built in Bali", credits: "Credits" },
+  footer: { text: "© 2026 Olfia Rachmi W" },
 };
 
 export default content;
