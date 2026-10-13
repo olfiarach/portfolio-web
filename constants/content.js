@@ -1,4 +1,7 @@
 // Single source for all page copy (copy deck: olfia-webpage-copy.md). `need` = open [NEED] items, shown in dev only.
+// Canonical site origin (override with NEXT_PUBLIC_SITE_URL).
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://olfiarach.vercel.app").replace(/\/$/, "");
+
 const content = {
   meta: {
     title: "Olfia Rachmi W · AI & Computer Vision Engineer",
@@ -27,10 +30,10 @@ const content = {
     demo: "https://olfiarach.github.io/TemanNetra/",
   },
   nav: [
-    ["Work", "#work"],
-    ["Experience", "#experience"],
-    ["Teaching", "#teaching"],
-    ["Contact", "#contact"],
+    ["Work", "/#work"],
+    ["Experience", "/#experience"],
+    ["Teaching", "/#teaching"],
+    ["Contact", "/#contact"],
   ],
   navCta: "Email me",
   hero: {
@@ -47,7 +50,7 @@ const content = {
     need: [],
   },
   statement:
-    "I started in front-end work: React, Next.js, Tailwind and Webflow, for teams that cared how fast a page loads. Now I apply that same care to machine learning. I curate the data, train the model, tune it until the numbers hold, and wrap it in something a person can actually use. I've also been teaching code since 2022, so I'm used to explaining hard things simply.",
+    "I started in front-end work: React, Next.js, Tailwind and Webflow, for teams that cared about load time. Now I work in machine learning: I curate the data, train and tune the model, and wrap it in an app people can use. I've also been teaching code since 2022, so I'm used to explaining hard things simply.",
   project: {
     kicker: "FEATURED PROJECT",
     title: "TemanNetra",
@@ -64,8 +67,8 @@ const content = {
       {
         label: "02 · MODEL",
         stat: "mAP@50 > 90%",
-        heading: "Trained YOLOv8 and tuned it until it held",
-        body: "I trained and tuned a YOLOv8 detector until it passed 90% mAP@50 across denominations.",
+        heading: "Trained a YOLOv8 detector",
+        body: "The detector passes 90% mAP@50 across denominations.",
       },
       {
         label: "03 · SERVE",
@@ -97,9 +100,9 @@ const content = {
         role: "Coding Instructor",
         org: "Timedoor (part-time)",
         lines: [
-          "I teach Python, JavaScript, React Native and Vue.js to students in Indonesia, MENA and Australia, in class and online.",
+          "Teach Python, JavaScript, React Native and Vue.js to students in Indonesia, MENA and Australia, in class and online.",
+          "Teach kids and teens to build games, websites and mobile apps with Scratch, Phaser and React Native, and write progress reports to parents.",
           "98% of my students finish their final project.",
-          "I teach kids and teenagers with Scratch, JavaScript, Phaser and React Native, building games, websites and mobile apps, and I write progress reports to parents.",
         ],
         label: "teaching 0.98",
       },
@@ -108,8 +111,8 @@ const content = {
         role: "Web Specialist",
         org: "Freelance",
         lines: [
-          "I built a luxury hotel directory in Webflow CMS that guests can filter by location and category.",
-          "Custom CSS with fluid type, custom JS interactions, and SEO and image tuning for fast loads.",
+          "Built a luxury hotel directory in Webflow CMS that guests can filter by location and category.",
+          "Added custom CSS with fluid type, custom JS interactions, and SEO and image tuning for fast loads.",
         ],
         label: "webflow 0.96",
       },
@@ -118,9 +121,9 @@ const content = {
         role: "Full-stack Developer",
         org: "Semantu",
         lines: [
-          "I build product-based web apps at semantu.com.",
-          "I built React and Tailwind web apps with Google Maps geolocation and Zoom video built in.",
-          "I turned legacy code into a shared component library, which cut new-feature build time by 20%.",
+          "Built product web apps at semantu.com.",
+          "Used React and Tailwind, with Google Maps geolocation and Zoom video.",
+          "Turned legacy code into a shared component library, which cut new-feature build time by 20%.",
         ],
         label: "fullstack 0.95",
       },
@@ -129,9 +132,7 @@ const content = {
         role: "Frontend Developer",
         org: "Venatronics LLC",
         lines: [
-          "I took the company's flagship site from Figma to production in React.",
-          "Mobile-first, with first load under 2 seconds.",
-          "I built responsive company websites in React (venatronics.com).",
+          "Took the company site (venatronics.com) from Figma to a responsive, mobile-first React build with first load under 2 seconds.",
         ],
         label: "frontend 0.94",
       },
@@ -140,7 +141,7 @@ const content = {
         role: "Coding Teacher",
         org: "Kodland (part-time)",
         lines: [
-          "I taught kids to code with Scratch by building games, and wrote progress reports to parents.",
+          "Taught kids to code with Scratch by building games, and wrote progress reports to parents.",
         ],
         label: "teaching",
       },
@@ -149,7 +150,7 @@ const content = {
         role: "Front-End Developer",
         org: "Freelance",
         lines: [
-          "I developed projects and websites from design to code, aiming for pixel-perfect, performance-focused results (faldi.xyz).",
+          "Turned designs into websites, such as faldi.xyz.",
         ],
         label: "frontend",
       },
@@ -161,7 +162,7 @@ const content = {
     under: "of my students finish their final project.",
     places: "INDONESIA · MENA · AUSTRALIA",
     body: "Since 2022 I've taught kids and adults at Timedoor Academy, in person in Bali and online across Indonesia, MENA and Australia. I also mentored 11 scholarship learners from the Selukat Learning Center through HTML, CSS, modern JavaScript, Vue.js, code reviews and Git.",
-    why: "Teaching is how I check that I really understand something. It also makes me easy to work with on a team.",
+    why: "Teaching is how I check that I really understand something.",
   },
   stack: {
     kicker: "STACK",

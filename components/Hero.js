@@ -30,7 +30,7 @@ export default function Hero() {
           aria-label={h.alt}
           className="relative aspect-square w-full overflow-hidden bg-line sm:aspect-[3/2] lg:aspect-[4/5]"
         >
-          {h.photo && <img src={h.photo} alt="" className="h-full w-full object-cover" />}
+          {h.photo && <img src={h.photo} alt={h.alt} className="h-full w-full object-cover" />}
           <canvas data-hero="canvas" aria-hidden="true" className="absolute inset-0 h-full w-full" />
           {h.label && (
             <div aria-hidden="true" data-hero="box" className="hero-box">

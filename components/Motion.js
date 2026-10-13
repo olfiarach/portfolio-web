@@ -20,14 +20,15 @@ export default function Motion() {
       gsap.ticker.lagSmoothing(0);
 
       const onClick = (e) => {
-        const a = e.target.closest('a[href^="#"]');
-        const el = a && document.querySelector(a.getAttribute("href"));
+        const a = e.target.closest('a[href^="#"], a[href^="/#"]');
+        const hash = a?.getAttribute("href").replace(/^\//, ""); // nav uses "/#id" so it works off-home
+        const el = a && document.querySelector(hash);
         if (!el) return;
         e.preventDefault();
         // Lenis ignores CSS scroll-margin; pass it as offset
         lenis.scrollTo(el, { duration: 0.7, offset: -parseFloat(getComputedStyle(el).scrollMarginTop) || 0 });
         el.focus?.({ preventScroll: true });
-        history.pushState(null, "", a.getAttribute("href"));
+        history.pushState(null, "", hash);
       };
       document.addEventListener("click", onClick);
 
